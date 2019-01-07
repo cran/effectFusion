@@ -15,10 +15,16 @@
 The default print method for a \code{fusion} object.
 }
 \details{
-Returns basic information about the model, the number of observations, the number and
-types of used covariates with their number of categories and MCMC options.
+Returns basic information about the full, initial model: the number of 
+observations, the family, the number and types of used covariates with their 
+number of categories and MCMC options.
+}
+\examples{
+## see example for effectFusion
 }
 \seealso{
 \code{\link{effectFusion}}
 }
-
+\author{
+Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+}

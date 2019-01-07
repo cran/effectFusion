@@ -8,21 +8,21 @@
 #' covariates, and \eqn{\beta_h = 0} for h = 2, 4, 6, 8. Levels of the predictors are generated with 
 #' probabilities \eqn{\pi_h = (0.1, 0.1, 0.2, 0.05, 0.2, 0.1, 0.2, 0.05)} and \eqn{\pi_h = (0.1, 0.4, 
 #' 0.2, 0.3)} for regressors with 8 and 4 levels, respectively. For more details on the 
-#' simulation setting see Pauger and Wagner (2016).
+#' simulation setting see Pauger and Wagner (2018).
 #' 
 #' @docType data
 #' @usage data(sim1)
-#' @format A named list containing the four following variables:
+#' @format A named list containing the following four variables:
 #' \describe{
-#'  \item{\code{y}}{vector with 500 observations of normal response variable}
+#'  \item{\code{y}}{vector with 500 observations of a normal response variable}
 #'  \item{\code{X}}{matrix with 8 categorical predictors}
 #'  \item{\code{beta}}{vector with coefficients used for data generation}
 #'  \item{\code{types}}{character vector with types of covariates, 'o' for ordinal and 'n' for 
 #'  nominal covariates}
 #' }
 #' 
-#' @source Pauger, D. and Wagner, H. (2016). Bayesian effect fusion for categorical predictors. 
-#' Submitted manuscript.  
+#' @references  Pauger, D., and Wagner, H. (2018). Bayesian Effect Fusion for Categorical Predictors.
+#' \emph{Bayesian Analysis}, in print.  
 #'  
 #' @seealso \code{\link{effectFusion}}
 #' @name sim1

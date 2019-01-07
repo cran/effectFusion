@@ -15,24 +15,23 @@
 }
 \description{
 This function provides plots of posterior means and 95\%-HPD intervals for the
-regression effects after model selection. Plots are based on the refitted MCMC samples of the
-selected model in an object of class \code{fusion}.
+regression effects. Plots are based on the refitted MCMC samples of the
+selected model in an object of class \code{fusion} or on model averaged results if no
+final model selection was performed.
 }
 \details{
-If model selection is not performed, posterior means and HPD itervals are model averaged
-results. Otherwise model selection is performed and the parameters of the selected model are estimate
-with a flat uninformative prior.
-Fused categories have the same posterior mean and HPD interval. Single categories that are excluded
+If no effect fusion or no final model selection is performed, posterior means and HPD intervals are model averaged
+results. Otherwise, the parameters of the selected model are reestimated
+with a flat uninformative prior. Thus, fused categories have the same posterior mean and HPD interval. Single categories that are excluded
 from the model are fused to the reference category and therefore only a posterior mean at zero and no
 interval is plotted.
 }
 \examples{
 ## see example for effectFusion
 }
-\author{
-Daniela Pauger <daniela.pauger@jku.at>
-}
 \seealso{
 \code{\link{effectFusion}}
 }
-
+\author{
+Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+}

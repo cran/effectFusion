@@ -16,25 +16,24 @@ The DIC for the estimated model in the \code{fusion} object.
 This function computes the DIC (deviance information criterion) for the estimated model in a \code{fusion} object.
 }
 \details{
-The DIC can be easily computed from the MCMC output and is defined as 
-\eqn{DIC = 2 \overline{D(\theta)} - D(\overline{\theta})}, where \eqn{\overline{D(\theta)} = 
-\frac{1}{M} \sum \limits_{m=1}^{M} D(\theta^{(m)})} is the average posterior deviance and 
-\eqn{D(\bar{\theta})} is the deviance evaluated at \eqn{\bar{\theta} = \frac{1}{M} \sum 
-\limits_{m=1}^{M} \theta^{(m)}}. \eqn{\theta^{(m)}} are samples from the posterior of the model 
+The DIC can be easily computed from the MCMC output and is defined as
+\eqn{DIC = 2 \overline{D(\theta)} - D(\overline{\theta})}, where \eqn{\overline{D(\theta)} =
+\frac{1}{M} \sum \limits_{m=1}^{M} D(\theta^{(m)})} is the average posterior deviance and
+\eqn{D(\bar{\theta})} is the deviance evaluated at \eqn{\bar{\theta} = \frac{1}{M} \sum
+\limits_{m=1}^{M} \theta^{(m)}}. \eqn{\theta^{(m)}} are samples from the posterior of the model
 and M is the number of MCMC iterations.
 }
 \examples{
 ## see example for effectFusion
 
 }
-\author{
-Daniela Pauger <daniela.pauger@jku.at>
-}
 \references{
-Spiegelhalter, D., Best, N., Carlin, B. and van der Linde, A. (2002). Bayesian measures of model 
-complexity and fit. \emph{J. R. Statist. Soc. B}, \strong{64}(4), 583-639.
+Spiegelhalter, D., Best, N., Carlin, B., and van der Linde, A. (2002). Bayesian Measures of Model
+Complexity and Fit. \emph{J. R. Statist. Soc. B}, \strong{64(4)}, 583-639.
 }
 \seealso{
 \code{\link{effectFusion}}
 }
-
+\author{
+Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+}
