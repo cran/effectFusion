@@ -12,31 +12,31 @@
 #' in the case of logistic regression a data augmentation strategy (Polson et al. (2013)) is used that requires
 #' only one additional step to sample from the Polya-Gamma distribution.
 #'
-#' @param y a vector of the response observations (continuous if \code{family = 'gaussian'} and 0/1 if \code{family = 'binomial'})
+#' @param y a vector of the response observations (continuous if \code{family =} \code{'gaussian'} and 0/1 if \code{family =} \code{'binomial'})
 #' @param X a data frame with covariates, each column representing one covariate. Ordinal and nominal covariates should
 #' be of class \code{factor}
 #' @param types a character vector to specify the type of each covariate; 'c' indicates continuous or metric predictors, 'o'
 #' ordinal predictors and 'n' nominal predictors
 #' @param method controls the main prior structure that is used for effect fusion. For the prior
-#' that has an interpretation as spike and slab prior on the level effect differences choose \code{method = 'SpikeSlab'}
-#' and for the sparse finite mixture prior on the level effects choose \code{method = 'FinMix'}. See
+#' that has an interpretation as spike and slab prior on the level effect differences choose \code{method =} \code{'SpikeSlab'}
+#' and for the sparse finite mixture prior on the level effects choose \code{method =} \code{'FinMix'}. See
 #' details for a description of the two approaches and their advantages and drawbacks. For comparison purposes
-#' it is also possible to fit a full model without performing any effect fusion (\code{method = NULL})
+#' it is also possible to fit a full model without performing any effect fusion (\code{method =} \code{NULL})
 #' @param prior an (optional) list of prior settings and hyper-parameters for the prior (see details).
 #' The specification of this list depends on the chosen \code{method} and the selected \code{family}
 #' @param mcmc an (optional) list of MCMC sampling options (see details)
 #' @param mcmcRefit an (optional) list of MCMC sampling options for the refit of the selected model (see details)
-#' @param family indicates whether linear (default, \code{family = 'gaussian'}) or logistic regression (\code{family = 'binomial'})
+#' @param family indicates whether linear (default, \code{family =} \code{'gaussian'}) or logistic regression (\code{family =} \code{'binomial'})
 #' should be performed
-#' @param modelSelection if \code{modelSelection = 'binder'} the final model is selected by minimising the expected posterior binder's loss
+#' @param modelSelection if \code{modelSelection =} \code{'binder'} the final model is selected by minimising the expected posterior binder's loss
 #' using an algorithm of Lau and Green (2008) for the spike and slab model and an algorithm of Rastelli and Friel (2016)
-#' for the finite mixture approach. Alternatively, \code{modelSelection = 'pam'} can be specified for the sparse finite mixture
+#' for the finite mixture approach. Alternatively, \code{modelSelection =} \code{'pam'} can be specified for the sparse finite mixture
 #' model. In that case, the final model is selected by using pam clustering and the silhouette coefficient (see Malsiner-Walli et al., 2018 for details). 
 #' If \code{modelSelection} is \code{NULL} no final model selection is performed and parameter estimates
-#' are model averaged results. \code{modelSelection = 'binder'} is the default value. \code{modelSelection = 'pam'}
-#' is only available for \code{method = 'FinMix'}. If \code{method = 'SpikeSlab'} and \code{modelSelection = 'pam'},
+#' are model averaged results. \code{modelSelection =} \code{'binder'} is the default value. \code{modelSelection =} \code{'pam'}
+#' is only available for \code{method =} \code{'FinMix'}. If \code{method =} \code{'SpikeSlab'} and \code{modelSelection =} \code{'pam'},
 #' \code{modelSelection} is automatically set to \code{'binder'}. For the finite mixture approach
-#' we recommend to use \code{modelSelection = 'binder'}, as this algorithm provides - in contrast to pam clustering and the
+#' we recommend to use \code{modelSelection =} \code{'binder'}, as this algorithm provides - in contrast to pam clustering and the
 #' the silhouette coefficient - the opportunity to exclude whole covariates.
 #' @param returnBurnin if \code{TRUE} (default is \code{FALSE}) the burn-in iterations of the MCMC sampling process are returned as well. 
 #' This can be for example used to check convergence. Returning the burn-in does not influence the results of \code{\link{dic}},
@@ -57,9 +57,9 @@
 #' a spike at zero with a finite location mixture of normal components. It enables detection of categories with similar
 #' effects on the response by clustering the regression effects. Categories with effects that are allocated to the same
 #' cluster are fused. Due to the specification with one component located at zero also automatic exclusion of
-#' levels and whole covariates without any effect on the outcome is provided. However, when using \code{modelSelection = 'pam'},
+#' levels and whole covariates without any effect on the outcome is provided. However, when using \code{modelSelection =} \code{'pam'},
 #' it is not possible to exclude whole covariates as the Silhouette coefficient does not allow for one cluster solutions. Therefore,
-#' we recommend to use \code{modelSelection = 'binder'}.
+#' we recommend to use \code{modelSelection =} \code{'binder'}.
 #'
 #' In settings with large numbers of categories, we recommend to use the sparse finite mixture prior for computational reasons.
 #' It is important to note that the sparse finite mixture prior on the level effects does not take into account the ordering information of ordinal
@@ -67,48 +67,48 @@
 #'
 #' Metric predictors can be included in the model as well and variable selection will be performed also for these predictors.
 #'
-#' If \code{modelSelection = NULL}, no final model selection is performed and model averaged results are returned. When \code{modelSelection = 'binder'} the final
+#' If \code{modelSelection =} \code{NULL}, no final model selection is performed and model averaged results are returned. When \code{modelSelection =} \code{'binder'} the final
 #' model is selected by minimizing the expected posterior Binder loss for each covariate separately.
-#' Additionally, there is a second option for the finite mixture prior (\code{modelSelection = 'pam'}) which performs model selection
+#' Additionally, there is a second option for the finite mixture prior (\code{modelSelection =} \code{'pam'}) which performs model selection
 #' by identifying the optimal partition of the effects using PAM clustering and the silhouette coefficient.
 #' 
-#' For comparison purposes it is also possible to fit a full model instead of performing effect fusion (\code{method = NULL}).
-#' All other functions provided in this package, such as \code{\link{dic}} or \code{\link{summary}}, do also work for the full model
+#' For comparison purposes it is also possible to fit a full model instead of performing effect fusion (\code{method =} \code{NULL}).
+#' All other functions provided in this package, such as \code{\link{dic}} or \code{\link{summary}}, do also work for the full model.
 #'
 #' Details for the model specification (see arguments):
 #' \describe{
 #'  
-#'  \item{\code{prior}}{\describe{\item{}{a list (depending on used \code{method} and specified \code{family}). If \code{method = NULL}, all prior
+#'  \item{\code{prior}}{\describe{\item{}{a list (depending on used \code{method} and specified \code{family}). If \code{method =} \code{NULL}, all prior
 #'  specifications are ignored and a flat, uninformative prior is assigned to the level effects}
-#'    \item{\code{r}}{variance ratio of slab to spike component; default to 50000 if \code{family = 'gaussian'} and 
-#'    5000000 if \code{family = 'binomial'}. \code{r} should be chosen not too small but still small enough to avoid stickiness of MCMC. We
+#'    \item{\code{r}}{variance ratio of slab to spike component; default to 50000 if \code{family =} \code{'gaussian'} and 
+#'    5000000 if \code{family =} \code{'binomial'}. \code{r} should be chosen not too small but still small enough to avoid stickiness of MCMC. We
 #'    recommend a value of at least 20000.}
-#'    \item{\code{g0}}{shape parameter of inverse gamma distribution on \eqn{\tau^2} when \code{tau2_fix = NULL} and \code{method = 'SpikeSlab'}; default
+#'    \item{\code{g0}}{shape parameter of inverse gamma distribution on \eqn{\tau^2} when \code{tau2_fix =} \code{NULL} and \code{method =} \code{'SpikeSlab'}; default
 #'    to 5. The default value is a standard choice in variable selection where the tails of spike and slab component are not too thin
 #'    to cause mixing problems in MCMC.}
-#'    \item{\code{G0}}{scale parameter of inverse gamma distribution on \eqn{\tau^2} when \code{tau2_fix = NULL} and \code{method = 'SpikeSlab'}; default
+#'    \item{\code{G0}}{scale parameter of inverse gamma distribution on \eqn{\tau^2} when \code{tau2_fix =} \code{NULL} and \code{method =} \code{'SpikeSlab'}; default
 #'    to 25. \code{G0} controls to some extend the sparsity of the model. Smaller values for \code{G0} help to detect also small
 #'    level effect differences, but result in less fusion of categories.}
-#'    \item{\code{tau2_fix}}{If \code{tau2_fix = NULL}, an inverse gamma hyper-prior is specified on \eqn{\tau^2}. 
+#'    \item{\code{tau2_fix}}{If \code{tau2_fix =} \code{NULL}, an inverse gamma hyper-prior is specified on \eqn{\tau^2}. 
 #'    However, the value of the slab variance can also be fixed for each covariate instead of using a hyperprior.
-#'    \code{tau2_fix} is only of interest if \code{method = 'SpikeSlab'}.
+#'    \code{tau2_fix} is only of interest if \code{method =} \code{'SpikeSlab'}.
 #'    Default to \code{NULL}. Similar to the scale parameter \code{G0}, the fixed variance of the slab
 #'    component \code{tau2_fix} can control to some extend the sparsity.}
-#'    \item{\code{e0}}{parameter of Dirichlet hyper-prior on mixture weights when \code{method = 'FinMix'};
+#'    \item{\code{e0}}{parameter of Dirichlet hyper-prior on mixture weights when \code{method =} \code{'FinMix'};
 #'    default to 0.01. \code{e0} should be chosen smaller than 1 in order to encourage empty components. Small values such as
 #'    0.01 help to concentrate the model space on sparse solutions.}
-#'    \item{\code{p}}{prior parameter to control mixture component variances when \code{method = 'FinMix'}; values between 100 and 100000
-#'    led to good results in simulation studies; default to 100 if \code{family = 'gaussian'} and 1000 if \code{family = 'binomial'}. We recommend to try different values for this
-#'    prior parameter and compare the models using \code{\link{dic}}. When \code{hyperprior = FALSE}, larger values of \code{p} lead to less sparsity and it should be chosen
-#'    not smaller than 100. If a hyper-prior on the mixture component variances is used (\code{hyperprior = TRUE}), \code{p}
+#'    \item{\code{p}}{prior parameter to control mixture component variances when \code{method =} \code{'FinMix'}; values between 100 and 100000
+#'    led to good results in simulation studies; default to 100 if \code{family =} \code{'gaussian'} and 1000 if \code{family =} \code{'binomial'}. We recommend to try different values for this
+#'    prior parameter and compare the models using \code{\link{dic}}. When \code{hyperprior =} \code{FALSE}, larger values of \code{p} lead to less sparsity and it should be chosen
+#'    not smaller than 100. If a hyper-prior on the mixture component variances is used (\code{hyperprior =} \code{TRUE}), \code{p}
 #'    has almost no effect on the sparsity of the model and it should again be not smaller than 100.}
-#'    \item{\code{hyperprior}}{logical value if inverse gamma hyper-prior on component variance should be specified when \code{method = 'FinMix'};
+#'    \item{\code{hyperprior}}{logical value if inverse gamma hyper-prior on component variance should be specified when \code{method =} \code{'FinMix'};
 #'    default to FALSE. The hyper-prior leads to robust results concerning the specification of \code{p}
 #'    but also to very sparse solutions.}
 #'    \item{\code{s0}}{hyper-parameter (shape) of inverse gamma distribution on error variance, used for both
-#'    versions of \code{method}, but only for \code{family = 'gaussian'}; default to 0.}
+#'    versions of \code{method}, but only for \code{family =} \code{'gaussian'}; default to 0.}
 #'    \item{\code{S0}}{hyper-parameter (scale) of inverse gamma distribution on error variance, used for both
-#'    versions of \code{method}, but only for \code{family = 'gaussian'}; default to 0.}
+#'    versions of \code{method}, but only for \code{family =} \code{'gaussian'}; default to 0.}
 #' }}
 #' 
 #' \item{\code{mcmc}}{\describe{\item{}{a list:}
@@ -118,50 +118,46 @@
 #'    default to 1000 for effect fusion models and 0 for full models.}
 #' }}
 #' 
-#' \item{\code{mcmcRefit}}{\describe{\item{}{a list (not necessary if \code{modelSelection = NULL} or \code{method = NULL}):}
+#' \item{\code{mcmcRefit}}{\describe{\item{ }{a list (not necessary if \code{modelSelection =} \code{NULL} or \code{method =} \code{NULL}):}
 #'    \item{\code{M_refit}}{number of MCMC iterations after the burn-in phase for the refit of the selected model; default to 3000.}
 #'    \item{\code{burnin_refit}}{number of MCMC iterations discarded as burn-in for the refit of the selected model; default to 1000.}
 #' }}}
 #' 
 #'
 #' @return The function returns an object of class \code{fusion} with methods \code{\link{dic}},
-#' \code{\link{model}}, \code{\link{print.fusion}}, \code{\link{summary.fusion}} and
-#' \code{\link{plot.fusion}}.
+#' \code{\link{model}}, \code{\link{print}}, \code{\link{summary}} and \code{\link{plot}}.
 #'
 #' An object of class \code{fusion} is a named list containing the following elements:
 #'
-#' \item{\code{fit}}{a named list containing the samples from the posterior distributions of the parameters
-#' depending on the used prior structure (\code{method = 'SpikeSlab'}, \code{method = 'FinMix'} or \code{method = NULL}):
 #' \describe{
+#' \item{\code{fit}}{\describe{\item{}{a named list containing the samples from the posterior distributions of the parameters
+#' depending on the used prior structure (\code{method =} \code{'SpikeSlab'}, \code{method =} \code{'FinMix'} or \code{method =} \code{NULL}):}
 #' \item{\code{beta}}{regression coefficients \eqn{\beta_0} (intercept) and \eqn{\beta}}
-#' \item{\code{delta}}{indicator variable \eqn{\delta} for slab component when \code{method = 'SpikeSlab'}. The differences of
+#' \item{\code{delta}}{indicator variable \eqn{\delta} for slab component when \code{method =} \code{'SpikeSlab'}. The differences of
 #' the level effects are assigned either to the spike (\code{delta = 0}) or the slab component (\code{delta = 1}). If an
 #' effect difference is assigned to the spike component, the difference is almost zero and the corresponding level effects
 #' should be fused.}
-#' \item{\code{tau2}}{variance \eqn{\tau^2} of slab component when \code{method = 'SpikeSlab'}. If no hyperprior on \eqn{\tau^2} is specified, \code{tau2} contains the fixed values for \eqn{\tau^2}.}
-#' \item{\code{S}}{latent allocation variable \eqn{S} for mixture components when \code{method = 'FinMix'}}
-#' \item{\code{eta}}{mixture component weights \eqn{\eta} when \code{method = 'FinMix'}}
-#' \item{\code{eta0}}{weights of components located at zero \eqn{\eta_0} when \code{method = 'FinMix'}}
-#' \item{\code{mu}}{mixture component means \eqn{\mu} when \code{method = 'FinMix'}}
-#' \item{\code{sgma2}}{error variance \eqn{\sigma^2} of the model (only for \code{family = 'gaussian'})}
+#' \item{\code{tau2}}{variance \eqn{\tau^2} of slab component when \code{method =} \code{'SpikeSlab'}. If no hyperprior on \eqn{\tau^2} is specified, \code{tau2} contains the fixed values for \eqn{\tau^2}.}
+#' \item{\code{S}}{latent allocation variable \eqn{S} for mixture components when \code{method =} \code{'FinMix'}}
+#' \item{\code{eta}}{mixture component weights \eqn{\eta} when \code{method =} \code{'FinMix'}}
+#' \item{\code{eta0}}{weights of components located at zero \eqn{\eta_0} when \code{method =} \code{'FinMix'}}
+#' \item{\code{mu}}{mixture component means \eqn{\mu} when \code{method =} \code{'FinMix'}}
+#' \item{\code{sgma2}}{error variance \eqn{\sigma^2} of the model (only for \code{family =} \code{'gaussian'})}
 #' }}
-#' \item{\code{fit_burnin}}{a named list containing the same elements as \code{fit} including the burnin-phase, if \code{returnBurnin = TRUE},
-#' \code{NULL} otherwise.
-#' The elements that correspond to the model selection procedure, e.g. \code{delta} or \code{S}, are \code{NA} for the first \code{startsel} iterations.}
-#' \item{\code{refit}}{a named list containing samples from the posterior distributions of the parameters of
-#' the model refit (only if \code{method} and \code{modelSelection} are unequal to \code{NULL}):
-#' \describe{
-#' \item{\code{beta}}{regression coefficients \eqn{\beta_0} (intercept) and \eqn{\beta}}
-#' \item{\code{sgma2}}{error variance \eqn{\sigma^2} of the model (only for \code{family = 'gaussian'})}
-#' \item{\code{X_dummy_fused}}{the dummy coded design matrix with fused levels}
-#' \item{\code{model}}{vector of zeros and ones representing the selected model based on pairs of categories}
+#' \item{\code{fit_burnin}}{\describe{\item{}{a named list containing the same elements as \code{fit} including the burnin-phase, if \code{returnBurnin =} \code{TRUE},
+#' \code{NULL} otherwise. The elements that correspond to the model selection procedure, e.g. \code{delta} or \code{S}, are \code{NA} for the first \code{startsel} iterations.}}}
+#' \item{\code{refit}}{\describe{\item{}{a named list containing samples from the posterior distributions of the parameters of
+#' the model refit (only if \code{method} and \code{modelSelection} are unequal to \code{NULL}):}
+#' \item{\code{beta}}{\describe{regression coefficients including the intercept in the model with fused levels}}
+#' \item{\code{sgma2}}{\describe{error variance of the model with fused levels (only for \code{family =} \code{'gaussian'})}}
+#' \item{\code{X_dummy_fused}}{\describe{the dummy coded design matrix with fused levels}}
+#' \item{\code{model}}{\describe{vector of zeros and ones representing the selected model based on pairs of categories}}
 #' }}
 #' \item{\code{method}}{see arguments}
 #' \item{\code{family}}{see arguments}
-#' \item{\code{data}}{a named list containing the data \code{y}, \code{X}, the dummy coded design matrix \code{X_dummy},
+#' \item{\code{data}}{\describe{\item{}{a named list containing the data \code{y}, \code{X}, the dummy coded design matrix \code{X_dummy},
 #'  \code{types} and \code{levelnames} of ordinal and nominal predictors}
-#' \item{model}{a named list containing information on the full, initial model
-#' \describe{
+#' \item{\code{model}}{a named list containing information on the full, initial model}
 #' \item{\code{categories}}{number of categories for categorical predictors}
 #' \item{\code{diff}}{number of pairwise level effect differences}
 #' \item{\code{n_cont}}{number of metric predictors}
@@ -175,6 +171,7 @@
 #' \item{\code{returnBurnin}}{see arguments}
 #' \item{\code{numbCoef}}{number of estimated regression coefficients (based on the refitted model if effect fusion and final model selection is performed, otherwise based on model averaged results or the full model, respectively)}
 #' \item{\code{call}}{function call}
+#' }
 #'
 #' @note The function can be used for ordinal and/or nominal predictors and metric covariates
 #' can additionally be included in the model. Binary covariates as a special case of nominal predictors
