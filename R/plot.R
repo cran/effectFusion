@@ -15,7 +15,7 @@
 #' from the model are fused to the reference category and therefore only a posterior mean at zero and no
 #' interval is plotted.
 #'
-#' @author Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+#' @author Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 #'
 #' @method plot fusion
 #' @export

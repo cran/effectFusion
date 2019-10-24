@@ -287,5 +287,5 @@ Polya-Gamma Latent Variables. \emph{Journal of the American Statistical Associat
 }
 }
 \author{
-Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>, Helga Wagner, Gertraud Malsiner-Walli
+Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>, Helga Wagner, Gertraud Malsiner-Walli
 }

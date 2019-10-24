@@ -15,7 +15,7 @@
 #' (argument \code{modelSelection} in \code{effectFusion} is NULL), the coefficient estimates are model
 #' averaged results.
 #'
-#' @author Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+#' @author Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 #'
 #' @seealso \code{\link{effectFusion}}
 #' 

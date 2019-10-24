@@ -35,5 +35,5 @@ Complexity and Fit. \emph{J. R. Statist. Soc. B}, \strong{64(4)}, 583-639.
 \code{\link{effectFusion}}
 }
 \author{
-Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 }

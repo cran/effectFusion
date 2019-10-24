@@ -183,7 +183,7 @@
 #' For large models and more than 15,000 MCMC iterations, some thinning of the MCMC when using the sparse finite
 #' mixture prior is performed due to computational issues.
 #'
-#' @author Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>, Helga Wagner, Gertraud Malsiner-Walli
+#' @author Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>, Helga Wagner, Gertraud Malsiner-Walli
 #'
 #' @references {Pauger, D., and Wagner, H. (2018). Bayesian Effect Fusion for Categorical Predictors.
 #' \emph{Bayesian Analysis}, in print.

@@ -32,5 +32,5 @@ averaged results.
 \code{\link{effectFusion}}
 }
 \author{
-Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 }

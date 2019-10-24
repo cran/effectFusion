@@ -1,10 +1,10 @@
 Package: effectFusion
-Version: 1.1.1
-Date: 2019-01-18
+Version: 1.1.2
+Date: 2019-10-24
 Title: Bayesian Effect Fusion for Categorical Predictors
 Authors@R: c(person("Daniela", "Pauger", role = c("aut")),
 			 person("Magdalena", "Leitner", role = c("aut", "cre"),
-			 email = "magdalena.leitner@jku.at"),
+			 email = "effectfusion.jku@gmail.com"),
               person("Helga", "Wagner", role = "aut", comment = c(ORCID = "0000-0002-7003-9512")),
 			  person("Gertraud", "Malsiner-Walli", role = "aut", comment = c(ORCID = "0000-0002-1213-4749")),
 			  person("Nicholas G.", "Polson", role = "ctb"),
@@ -30,7 +30,7 @@ LazyData: true
 NeedsCompilation: yes
 RoxygenNote: 6.1.1
 Repository: CRAN
-Packaged: 2019-01-19 18:23:07 UTC; User
+Packaged: 2019-10-24 16:33:33 UTC; User
 Author: Daniela Pauger [aut],
   Magdalena Leitner [aut, cre],
   Helga Wagner [aut] (<https://orcid.org/0000-0002-7003-9512>),
@@ -39,5 +39,5 @@ Author: Daniela Pauger [aut],
   James G. Scott [ctb],
   Jesse Windle [ctb],
   Bettina Grün [ctb] (<https://orcid.org/0000-0001-7265-4773>)
-Maintainer: Magdalena Leitner <magdalena.leitner@jku.at>
-Date/Publication: 2019-01-19 19:20:02 UTC
+Maintainer: Magdalena Leitner <effectfusion.jku@gmail.com>
+Date/Publication: 2019-10-24 19:20:02 UTC

@@ -9,7 +9,7 @@
 #' observations, the family, the number and types of used covariates with their 
 #' number of categories and MCMC options.
 #' 
-#' @author Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+#' @author Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 #'
 #' @seealso \code{\link{effectFusion}}
 #' @method print fusion

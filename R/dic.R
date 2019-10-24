@@ -12,7 +12,7 @@
 #' and M is the number of MCMC iterations.
 #'
 #' @return The DIC for the estimated model in the \code{fusion} object.
-#' @author Daniela Pauger, Magdalena Leitner <magdalena.leitner@jku.at>
+#' @author Daniela Pauger, Magdalena Leitner <effectfusion.jku@gmail.com>
 #' @export
 #'
 #' @seealso \code{\link{effectFusion}}
