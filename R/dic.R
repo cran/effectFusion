@@ -21,7 +21,7 @@
 #' ## see example for effectFusion
 #'
 #' @references Spiegelhalter, D., Best, N., Carlin, B., and van der Linde, A. (2002). Bayesian Measures of Model
-#' Complexity and Fit. \emph{J. R. Statist. Soc. B}, \strong{64(4)}, 583-639.
+#' Complexity and Fit. \emph{J. R. Statist. Soc. B}, \strong{64(4)}, 583-639. \doi{10.1111/1467-9868.00353}
 #'
 #' @importFrom methods is
 

@@ -1,6 +1,6 @@
 Package: effectFusion
-Version: 1.1.2
-Date: 2019-10-24
+Version: 1.1.3
+Date: 2021-10-13
 Title: Bayesian Effect Fusion for Categorical Predictors
 Authors@R: c(person("Daniela", "Pauger", role = c("aut")),
 			 person("Magdalena", "Leitner", role = c("aut", "cre"),
@@ -22,15 +22,16 @@ Description: Variable selection and Bayesian effect fusion for categorical predi
 	the level effects. The regression coefficients are estimated with a flat uninformative prior after 
 	model selection or by taking model averages. Posterior inference is accomplished by an MCMC 
 	sampling scheme which makes use of a data augmentation strategy (Polson, Scott & Windle 
-	(2013)) based on latent Polya-Gamma random variables in the case of logistic regression. 
-	The code for data augmentation is taken from Polson et al. (2013), who own the copyright.
+	(2013) <doi:10.1080/01621459.2013.829001>) based on latent Polya-Gamma random variables
+	in the case of logistic regression. The code for data augmentation is taken from Polson et al. (2013) 
+	<doi:10.1080/01621459.2013.829001>, who own the copyright.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: yes
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2
 Repository: CRAN
-Packaged: 2019-10-24 16:33:33 UTC; User
+Packaged: 2021-10-13 19:20:51 UTC; User
 Author: Daniela Pauger [aut],
   Magdalena Leitner [aut, cre],
   Helga Wagner [aut] (<https://orcid.org/0000-0002-7003-9512>),
@@ -40,4 +41,4 @@ Author: Daniela Pauger [aut],
   Jesse Windle [ctb],
   Bettina Grün [ctb] (<https://orcid.org/0000-0001-7265-4773>)
 Maintainer: Magdalena Leitner <effectfusion.jku@gmail.com>
-Date/Publication: 2019-10-24 19:20:02 UTC
+Date/Publication: 2021-10-13 21:10:05 UTC

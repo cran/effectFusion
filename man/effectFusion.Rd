@@ -4,9 +4,18 @@
 \alias{effectFusion}
 \title{Bayesian effect fusion for categorical predictors}
 \usage{
-effectFusion(y, X, types, method, prior = list(), mcmc = list(),
-  mcmcRefit = list(), family = "gaussian", modelSelection = "binder",
-  returnBurnin = FALSE)
+effectFusion(
+  y,
+  X,
+  types,
+  method,
+  prior = list(),
+  mcmc = list(),
+  mcmcRefit = list(),
+  family = "gaussian",
+  modelSelection = "binder",
+  returnBurnin = FALSE
+)
 }
 \arguments{
 \item{y}{a vector of the response observations (continuous if \code{family =} \code{'gaussian'} and 0/1 if \code{family =} \code{'binomial'})}
@@ -276,14 +285,15 @@ dic(m7)
 }
 }
 \references{
-{Pauger, D., and Wagner, H. (2018). Bayesian Effect Fusion for Categorical Predictors.
-\emph{Bayesian Analysis}, in print.
+{Pauger, D., and Wagner, H. (2019). Bayesian Effect Fusion for Categorical Predictors.
+\emph{Bayesian Analysis}, \strong{14(2)}, 341-369. \doi{10.1214/18-BA1096}
 
 Malsiner-Walli, G., Pauger, D., and Wagner, H. (2018). Effect Fusion Using Model-Based Clustering.
-\emph{Statistical Modelling}, \strong{18(2)}, 175-196.
+\emph{Statistical Modelling}, \strong{18(2)}, 175-196. \doi{10.1177/1471082X17739058}
 
 Polson, N.G., Scott, J.G., and Windle, J. (2013). Bayesian Inference for Logistic Models Using
 Polya-Gamma Latent Variables. \emph{Journal of the American Statistical Association}, \strong{108(504)}, 1339-1349.
+\doi{10.1080/01621459.2013.829001}
 }
 }
 \author{

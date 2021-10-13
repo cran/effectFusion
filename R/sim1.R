@@ -8,7 +8,7 @@
 #' covariates, and \eqn{\beta_h = 0} for h = 2, 4, 6, 8. Levels of the predictors are generated with 
 #' probabilities \eqn{\pi_h = (0.1, 0.1, 0.2, 0.05, 0.2, 0.1, 0.2, 0.05)} and \eqn{\pi_h = (0.1, 0.4, 
 #' 0.2, 0.3)} for regressors with 8 and 4 levels, respectively. For more details on the 
-#' simulation setting see Pauger and Wagner (2018).
+#' simulation setting see Pauger and Wagner (2019).
 #' 
 #' @docType data
 #' @usage data(sim1)
@@ -21,8 +21,9 @@
 #'  nominal covariates}
 #' }
 #' 
-#' @references  Pauger, D., and Wagner, H. (2018). Bayesian Effect Fusion for Categorical Predictors.
-#' \emph{Bayesian Analysis}, in print.  
+#' @references {Pauger, D., and Wagner, H. (2019). Bayesian Effect Fusion for Categorical Predictors.
+#' \emph{Bayesian Analysis}, \strong{14(2)}, 341-369. \doi{10.1214/18-BA1096}
+#' }
 #'  
 #' @seealso \code{\link{effectFusion}}
 #' @name sim1
